@@ -1,1 +1,13 @@
 # UnityUIManager
+- 각 UI는 프리팹으로 만들어져 있다.
+- 새로운 UI를 추가할 때는 Enum을 추가하고 IUI를 구현한 스크립트를 가진 프리팹을 만들어 UIManagerConfig에 추가하면 된다.(UIUserType, UIMain 참고)
+- UI 스택을 지원한다.
+  - UIManager.Navigate() : 스택의 모든 UI를 닫고 새로운 UI를 연다.
+  - UIManager.Push() : 현재 UI 위에 새로운 UI를 연다.
+- 현재 UI를 닫을 때는 UIManager.Back()을 호출하면 된다.
+- 안드로이드 백버튼으로 UI 닫기를 지원한다.
+- UI 관련 커스텀 이벤트
+  - OnUIShow : UI가 열릴 때 호출됨
+  - OnUIHide : UI가 닫힐 때 호출됨
+  - OnUIFocus : 이 UI 위에 열려있는 UI가 닫힐 때 호출됨
+  - OnUIBlur : 이 UI 위에 새로운 UI가 열릴 때 호출됨
